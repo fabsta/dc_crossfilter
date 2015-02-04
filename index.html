@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HMMER results overview using  Dimensional Charting Javascript Library</title>
+
+    <meta charset="UTF-8">
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+
+<!-- <link href="http://colmmcdonnell.github.io/ppr/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" type="text/css" href="css/dc.css"/>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="col-md-12 column" id="crossfilter_div">
+                <h3>HMMER families</h3>
+                There are <span class="total_hits"></span> hits. Click and drag and watch the graphs move and then when that gets old see ....
+                        <!--<ol>
+                         <li>How many <a href="javascript:rootfilter('Vertebrata')">Vertebrate</a> families are there?</li>
+                         <li>Show me all families with <a href="javascript:familiesfilter([90,120])">~1 gene/species</a></li>
+                         <li>Which are the <a href="javascript:alignmentfilter([80, 100])">highly-conserved</a> families (alignment conservation >= 85%)?</li>
+                         <li>How many families with <a href="javascript:alignmentfilter([80, 100])">many Pfam annotations</a> are there?</li>
+                         </ol>
+                <div class="alert alert-success">Tips:
+                    <ul>
+                        <li>Use the mouse to drag & select a range families.</li>
+                        <li>You can select several entities and they will be "OR" linked. <br>E.g. selecting "Diptera"  and "Vertebrata" will show families that are either exclusive to Diptera or Vertebrata</li>
+                        <li>You will find the 'reset all' button to reset all filters on the top of the page.</li>
+                    </ul>
+                </div>-->
+         <hr>
+        <div id="tree_spinner"><img src="http://www.ebi.ac.uk/~fs/d3treeviewer/data/images/loadinfo.net.gif" alt="Loading tree" height="22" width="22">Loading families data...</div>
+        <h3>Distribution Histogram</h3>
+            <div class="dc-data-count">
+                                <span class="filter-count"></span> selected out of <span class="total_hits"></span> records | <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+            </div>        
+            <div class="row clearfix"></div>
+                            <div id="distribution-chart">
+                                    <span class="chart-title">Evalue distribution</span> <span id="tipsy_family" class="glyphicon glyphicon-info-sign"></span><br>
+                                    <span class="reset" style="display: none;">range: <span class="filter"></span></span>
+                                    <div class="clearfix"></div>
+                            </div>
+            
+        <div class="col-md-8 column">
+                <div class="col-md-6 column" id="domain_architecture-chart">
+                    <span class="chart-title">Domain architectures</span> <span id="tipsy_species" class="glyphicon glyphicon-info-sign"></span><br>
+                    <span class="reset" style="display: none;">range: <span class="filter"></span></span>
+                            <div class="clearfix"></div>
+                </div>
+                <div class="col-md-6 column" id="modelOrganism_chart">
+                    <span class="chart-title">Model organism matches</span> <span id="tipsy_modorga" class="glyphicon glyphicon-info-sign"></span><br>
+                    <span class="reset" style="display: none;">range: <span class="filter"></span></span>
+                            <div class="clearfix"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="dc-data-count">
+                        <span class="filter-count"></span> selected out of <span class="total_hits"></span> records | <a
+                        href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+    </div>       
+    <div class="row clearfix"></div>
+                        <h4>Selected families</h4>
+                <div class="col-md-12 column">
+                    <table class="dc-data-table table table-hover table-condensed table-striped dc-chart" id="hits_table">
+                    <thead>
+                    <tr class="header">
+                         <th>Species</th> 
+                        <th>evalue</th>
+                        <th>domain architecture</th>
+                        
+                    </tr>
+                    </thead>    
+                    </table>
+                </div>
+
+            </div>
+
+<!-- <script type="text/javascript" src="js/d3.js"></script> -->
+<script language="JavaScript" type="text/javascript" src="http://www.treefam.org/static/javascripts//d3/d3.v3.min.js"></script>
+<!-- <script type="text/javascript" src="js/crossfilter.js"></script> -->
+<script type="text/javascript" src="js/crossfilter.min.js"></script>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+<!-- <script type="text/javascript" src="http://dev.treefam.org/static/javascripts/jquery/jquery.tipsy.js"></script>   
+<link href="http://dev.treefam.org/static/css/jquery/tipsy.css" rel="stylesheet" type="text/css" />   -->  
+<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+
+<!-- <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script> -->
+<script type="text/javascript" src="js/dc.js"></script>
+<!--<script type="text/javascript" src="js/d3.tip.min.js"></script> 
+ <script type="text/javascript" src="http://jeroenooms.github.io/dashboard/snack/lib/dc/dc.min.js"></script> 
+
+<script type="text/javascript" src="js/melt.js"></script>
+<script type="text/javascript" src="js/colorbrewer.js"></script>
+-->
+
+
+
+<script type="text/javascript" src="lib/hmmer_crossfilter.js"></script>
+
+</body>
+</html>
